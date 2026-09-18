@@ -1,0 +1,610 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Adhikaar — Civic Assistance Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline-variant":"#c3c6ce","on-primary-container":"#7a92b0","on-tertiary":"#ffffff","secondary-fixed":"#9cf2e8","error":"#ba1a1a","surface-container":"#e6eeff","on-surface-variant":"#43474d","on-error-container":"#93000a","on-surface":"#121c2a","on-secondary":"#ffffff","on-primary-fixed":"#011d35","inverse-on-surface":"#eaf1ff","surface-container-high":"#dee9fc","on-secondary-container":"#006f67","surface-tint":"#49607c","surface-bright":"#f8f9ff","on-error":"#ffffff","surface-container-low":"#eff4ff","primary-fixed-dim":"#b0c9e8","on-primary-fixed-variant":"#314863","on-tertiary-container":"#d5780b","surface-variant":"#d9e3f6","surface":"#f8f9ff","on-secondary-fixed":"#00201d","outline":"#74777e","secondary-fixed-dim":"#80d5cb","on-tertiary-fixed":"#2e1500","on-background":"#121c2a","primary-fixed":"#d1e4ff","primary-container":"#102a43","background":"#f8f9ff","tertiary-fixed-dim":"#ffb77a","error-container":"#ffdad6","inverse-surface":"#27313f","secondary-container":"#99efe5","on-primary":"#ffffff","inverse-primary":"#b0c9e8","on-secondary-fixed-variant":"#00504a","surface-dim":"#d0dbed","tertiary-fixed":"#ffdcc2","surface-container-highest":"#d9e3f6","tertiary-container":"#412000","surface-container-lowest":"#ffffff","secondary":"#006a63","primary":"#00152a","on-tertiary-fixed-variant":"#6d3a00","tertiary":"#230f00"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-2xl":"4rem","space-xs":"0.25rem","space-sm":"0.5rem",gutter:"1.5rem","space-lg":"1.5rem","gutter-mobile":"1rem","margin-mobile":"1.25rem",margin:"3rem","space-md":"1rem","space-xl":"2.5rem"},fontFamily:{"display-mobile":["\"Source Serif 4\""],"label-sm":["Manrope"],"headline-sm":["\"Source Serif 4\""],"title-lg":["Manrope"],"body-md":["Manrope"],"body-sm":["Manrope"],"title-md":["Manrope"],"body-lg":["Manrope"],"label-md":["Manrope"],"headline-md":["\"Source Serif 4\""],display:["\"Source Serif 4\""],"headline-lg":["\"Source Serif 4\""],"headline-lg-mobile":["\"Source Serif 4\""]},fontSize:{"display-mobile":["36px",{lineHeight:"44px",fontWeight:"600"}],"label-sm":["12px",{lineHeight:"16px",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"26px",fontWeight:"700"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],display:["48px",{lineHeight:"56px",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin flex items-center justify-between h-20"><div class="flex items-center gap-space-md"><img alt="Adhikaar Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XvhDEq2F-rTkRRA3uHFMhJnxOfWPntW4KpD7fKonP-NHu_Q_ReTKxGEjTZgkHXv7oNRUPrSyq_E1DdedbC7_AK5UEh-ul7zlPRNE7G6WviA7bqowAf1LKSLv291PC7cyxZkQESwkRU4PouLg5GF9M8QOOMkXIxPzs0Zn1SlXLYVQjXmH88E_br3pGhvuEdKTFyoDZzTTfU4GZ-Aw8OyyKrlI2_ZaQYn13P7UC93mHGvEptweM5C6sQZ1U"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">अधिकार Adhikaar</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide mt-1">Civic Assistance Platform</span></div></div><nav class="flex items-center gap-space-lg" data-active-classes="text-primary font-bold border-b-2 border-primary"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a aria-current="page" class="transition-colors py-space-xs text-primary font-bold border-b-2 border-primary" data-path="schemes" href="#">Schemes</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="legal-help" href="#">Legal Help</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="resources" href="#">Resources</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-md"><div class="relative flex items-center bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-[0_1px_3px_rgba(16,42,67,0.05)] cursor-pointer group"><div class="flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-on-surface">English</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:translate-y-0.5 transition-transform">expand_more</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">English · हिंदी · ਪੰਜਾਬੀ</span></div></div><button aria-label="Toggle Theme" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="relative group"><button aria-expanded="false" aria-haspopup="true" aria-label="User account menu" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-all shadow-[0_1px_3px_rgba(16,42,67,0.1)] focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer" id="user-avatar-btn" type="button"><span class="material-symbols-outlined text-[20px]">person</span></button><div class="absolute right-0 top-full mt-2 w-56 bg-surface-container-lowest rounded-xl shadow-xl border border-surface-container py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-200 z-50"><div class="px-4 py-2 border-b border-surface-container"><p class="font-label-md text-label-md text-primary font-bold">Aarav Sharma</p><p class="font-body-sm text-body-sm text-on-surface-variant">aarav.sharma@example.com</p></div><div class="py-1"><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">person</span><span class="">Profile</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">history</span><span class="">History</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">bookmark</span><span class="">Saved Cases</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">description</span><span class="">Documents</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">notifications</span><span class="">Reminders</span></a></div><div class="border-t border-surface-container pt-1"><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-error hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Sign Out</span></a></div></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient backdrops -->
+<div class="relative w-full max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-md pb-space-2xl">
+<!-- Top Editorial Header & Statutory Badge -->
+<header class="flex flex-col items-start max-w-4xl mb-space-xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container text-secondary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="font-label-sm text-label-sm tracking-wide uppercase">Central &amp; State Welfare Directory · Official Gazette Mapping</span>
+</div>
+<h1 class="font-display text-display text-primary tracking-tight mb-space-sm">
+        Find government schemes you are eligible for
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+        Search over 450+ verified social welfare, education, agricultural, and financial schemes. Filter by your personal socio-economic profile without sharing sensitive or private identifiers.
+      </p>
+<!-- Live metrics ticker strip -->
+<div class="flex flex-wrap items-center gap-space-lg mt-space-lg pt-space-sm text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">452 Active Portals Monitored</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">update</span>
+<span class="">Last Gazette Sync: 3 hrs ago</span>
+</div>
+<div class="flex items-center gap-space-xs"><div class="relative flex items-center bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-[0_1px_3px_rgba(16,42,67,0.05)] cursor-pointer group"><div class="flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-on-surface">English</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:translate-y-0.5 transition-transform">expand_more</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">English · हिंदी · ਪੰਜਾਬੀ</span></div></div><button aria-label="Toggle Theme" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="relative group"><button aria-expanded="false" aria-haspopup="true" aria-label="User account menu" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-all shadow-[0_1px_3px_rgba(16,42,67,0.1)] focus:outline-none focus:ring-2 focus:ring-secondary cursor-pointer" id="user-avatar-btn" type="button"><span class="material-symbols-outlined text-[20px]">person</span></button><div class="absolute right-0 top-full mt-2 w-56 bg-surface-container-lowest rounded-xl shadow-xl border border-surface-container py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-200 z-50"><div class="px-4 py-2 border-b border-surface-container"><p class="font-label-md text-label-md text-primary font-bold">Aarav Sharma</p><p class="font-body-sm text-body-sm text-on-surface-variant">aarav.sharma@example.com</p></div><div class="py-1"><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">person</span><span class="">Profile</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">history</span><span class="">History</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">bookmark</span><span class="">Saved Cases</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">description</span><span class="">Documents</span></a><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-secondary">notifications</span><span class="">Reminders</span></a></div><div class="border-t border-surface-container pt-1"><a class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md text-error hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Sign Out</span></a></div></div></div></div>
+</div>
+</header>
+<!-- ADVANCED FILTER BAR & SEARCH CONSOLE -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg mb-space-xl transition-all">
+<!-- Search Input Container with Autocomplete Suggestion Pills -->
+<div class="relative w-full mb-space-lg">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[24px]">search</span>
+<input class="w-full h-14 pl-12 pr-28 rounded-lg bg-surface text-on-surface font-body-md text-body-md shadow-sm focus:outline-none focus:bg-surface-container-low transition-all placeholder:text-outline" id="scheme-search-input" placeholder="Search by keyword, scheme name, or life situation (e.g. scholarship, solar pump, maternity, artisan loan)..." type="text">
+<button class="absolute right-space-md px-space-md py-1.5 rounded-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm flex items-center gap-1" id="clear-search-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+            Clear
+          </button>
+</div>
+<!-- Quick Keyword Chips -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm text-on-surface-variant">
+<span class="font-label-sm text-label-sm mr-1 text-outline">Trending searches:</span>
+<button class="quick-tag px-space-sm py-0.5 rounded bg-surface text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Pradhan Mantri Awas</button>
+<button class="quick-tag px-space-sm py-0.5 rounded bg-surface text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Kisan Credit Card</button>
+<button class="quick-tag px-space-sm py-0.5 rounded bg-surface text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Girl Child Education</button>
+<button class="quick-tag px-space-sm py-0.5 rounded bg-surface text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Mudran Loan</button>
+</div>
+</div>
+<!-- Sector / Category Multi-select Ribbon -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-primary font-bold">Target Beneficiary Group:</span>
+<span class="font-label-sm text-label-sm text-secondary cursor-pointer hover:underline" id="select-all-categories">Select All</span>
+</div>
+<div class="flex flex-wrap gap-space-xs" id="category-pills-wrap">
+<button class="cat-pill active px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" data-cat="all" type="button">
+            All Sectors (452)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="farmers" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">agriculture</span>
+            Farmers &amp; Agri (88)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="students" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">school</span>
+            Students &amp; Youth (104)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="women" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">family_restroom</span>
+            Women &amp; Children (76)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="seniors" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">elderly</span>
+            Senior Citizens (42)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="msme" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">storefront</span>
+            Small Business / MSME (91)
+          </button>
+<button class="cat-pill px-space-md py-space-xs rounded-full bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md shadow-sm transition-all" data-cat="health" type="button">
+<span class="material-symbols-outlined text-[16px] inline -mt-0.5 mr-1 text-secondary">accessible</span>
+            Health &amp; Disability (51)
+          </button>
+</div>
+</div>
+<!-- Eligibility Filter Grid Dropdowns -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md pt-space-md bg-surface-container-low p-space-md rounded-lg">
+<!-- State Dropdown -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Jurisdiction / State</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm pr-8 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none appearance-none cursor-pointer">
+<option value="all">All India (Central + State)</option>
+<option value="hr">Haryana</option>
+<option value="pb">Punjab</option>
+<option value="mh">Maharashtra</option>
+<option value="up">Uttar Pradesh</option>
+<option value="rj">Rajasthan</option>
+<option value="ka">Karnataka</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Age Group -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Beneficiary Age</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm pr-8 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none appearance-none cursor-pointer">
+<option value="all">Any Age Range</option>
+<option value="0-17">0 – 17 yrs (Minors)</option>
+<option selected="" value="18-35">18 – 35 yrs (Youth)</option>
+<option value="36-59">36 – 59 yrs (Adults)</option>
+<option value="60+">60+ yrs (Senior Citizens)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Occupation -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Primary Occupation</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm pr-8 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none appearance-none cursor-pointer">
+<option value="all">Any Employment Status</option>
+<option selected="" value="agri">Agriculture / Small Farmer</option>
+<option value="wage">Daily Wage Labor / Unorganized</option>
+<option value="self">Self-employed / Street Vendor</option>
+<option value="artisan">Traditional Craftsman / Artisan</option>
+<option value="student">Student / Unemployed</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Income Slab -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Annual Family Income</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm pr-8 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none appearance-none cursor-pointer">
+<option value="bpl">BPL / Antyodaya Cardholder</option>
+<option selected="" value="sub25">Below ₹2.5 Lakh / yr</option>
+<option value="25-5">₹2.5 Lakh to ₹5.0 Lakh / yr</option>
+<option value="5-8">₹5.0 Lakh to ₹8.0 Lakh / yr</option>
+<option value="above8">Above ₹8.0 Lakh / yr</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Gender / Social Group -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Social Category / Gender</label>
+<div class="relative">
+<select class="w-full h-11 px-space-sm pr-8 rounded bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none appearance-none cursor-pointer">
+<option value="all">All Genders &amp; Castes</option>
+<option value="female">Female Sole / Joint Priority</option>
+<option value="sc-st">SC / ST / Notified Tribes</option>
+<option value="obc">OBC / Non-Creamy Layer</option>
+<option value="minority">Religious Minority Group</option>
+<option value="divyang">Persons with Disabilities (PwD)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Active Filter Strip & Quick Status Action -->
+<div class="flex flex-wrap items-center justify-between gap-space-md mt-space-md pt-space-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+            Showing 42 schemes matching your criteria
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+            Age: 18–35
+            <button class="hover:text-primary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+            Income: &lt; ₹2.5L
+            <button class="hover:text-primary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+            Reset Filters
+          </button>
+<button class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+            Apply Rules
+          </button>
+</div>
+</div>
+</section>
+<!-- SCHEMES DISCOVERY GRID: 3-Column Desktop Calibrated Architecture -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-space-2xl">
+<!-- CARD 1: Agriculture & Direct Benefit -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<!-- Top Row: Tags & Verified Status -->
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">agriculture</span>
+              Agriculture · Central
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm" title="Synchronized with official PM-Kisan registry">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              pmkisan.gov.in
+            </span>
+</div>
+<!-- Title & Editorial Benefit Callout -->
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            PM Kisan Samman Nidhi
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Pradhan Mantri Kisan Samman Nidhi Yojana (Central Sector Scheme)
+          </p>
+<!-- Core Direct Benefit Banner -->
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              ₹6,000 / year
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Disbursed in 3 equal installments of ₹2,000 directly via DBT bank transfer.
+            </p>
+</div>
+<!-- Eligibility Parameters Breakdown -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> Small &amp; marginal landholding farmer families with cultivable land.
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Land Record (Jamabandi/RoR), Bank Passbook, Aadhaar seeded bank account.
+              </p>
+</div>
+</div>
+</div>
+<!-- Bottom Action Tray -->
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://pmkisan.gov.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- CARD 2: Education & Scholarship -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">school</span>
+              Education · Central &amp; State
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              Min. of Social Justice
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            Post-Matric Scholarship Scheme
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Welfare Scheme for SC/ST and Economically Backward Students
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              100% Tuition Waiver + ₹1,200/mo
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Full compulsory non-refundable university fee refund plus monthly maintenance stipend.
+            </p>
+</div>
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> Post-secondary students (Class 11 to Ph.D.) with family income &lt; ₹2.5 Lakh/yr.
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Caste Certificate, Domicile Proof, Income Certificate issued by Tehsildar.
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://scholarships.gov.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- CARD 3: Healthcare & Maternity Support -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">pregnant_woman</span>
+              Maternity · Health &amp; WCD
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              MoWCD National
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            Pradhan Mantri Matru Vandana (PMMVY)
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Direct Cash Maternity Incentive for Safe Institutional Delivery
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              ₹5,000 Direct Cash Aid
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Transferred in DBT tranches upon early registration and child vaccination milestones.
+            </p>
+</div>
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> Pregnant &amp; lactating mothers for first living child; additional incentive for girl infant.
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Mother-Child Protection (MCP) card, Anganwadi verification, Joint Bank Passbook.
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://pmmvy.wcd.gov.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- CARD 4: Senior Citizens & Social Security -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">elderly</span>
+              Senior Citizens · NSAP
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              nsap.nic.in
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            Old Age Pension Scheme (IGNOAPS)
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Indira Gandhi National Old Age Pension Assistance Framework
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              ₹1,000 to ₹1,500 / mo
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Guaranteed monthly pension with state supplemental contribution dispatched monthly.
+            </p>
+</div>
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> Citizens aged 60 years or above belonging to Below Poverty Line (BPL) households.
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Age Proof (Voter ID/Aadhaar), Valid BPL verification slip, Individual Savings A/C.
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://nsap.nic.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- CARD 5: Artisans & MSME -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">handyman</span>
+              Artisans · MSME Sector
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              pmvishwakarma.gov.in
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            PM Vishwakarma Scheme
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Holistic Support for Traditional Artisans and Craftspeople
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              ₹3 Lakh Loan @ 5% + ₹15k Toolkit
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Collateral-free credit in 2 tranches with modern toolkit grant and skill stipend.
+            </p>
+</div>
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> 18 traditional trade vocations (carpenters, blacksmiths, potters, cobblers, tailors).
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Self-declaration of family trade, Aadhaar bio-auth at Common Service Centre (CSC).
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://pmvishwakarma.gov.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- CARD 6: Housing & Urban Development -->
+<article class="flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md p-space-lg hover:shadow-xl transition-all duration-300 group">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">home</span>
+              Housing · MoHUA
+            </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              pmaymis.gov.in
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mb-space-xs">
+            Credit Linked Subsidy (PMAY-U)
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+            Affordable Urban Housing Interest Subsidy Initiative
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Entitlement Quantum</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold">
+              3.00% to 6.50% Interest Relief
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Upfront interest subsidy credited to home loan account, reducing total tenure EMI burden.
+            </p>
+</div>
+<div class="space-y-space-xs mb-space-md">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Target:</strong> EWS/LIG families without a pucca house in any part of India; female co-ownership priority.
+              </p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">assignment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Prerequisites:</strong> Income Affidavit, Title deeds of approved property, Bank In-principle sanction.
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container flex items-center justify-between gap-space-sm mt-space-sm">
+<button class="flex-1 py-2 rounded bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors text-center" type="button">
+            Checklist &amp; Guide
+          </button>
+<a class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1 shadow-sm shrink-0" href="https://pmaymis.gov.in" rel="noopener noreferrer" target="_blank">
+<span class="">Apply</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</article>
+</section>
+<!-- EDITORIAL BENEFIT SUMMARY & SAVE SEARCH STRIP -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-lg mb-space-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-on-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-lg text-title-lg text-primary font-bold">Never miss an application deadline</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Save this customized eligibility filter. Adhikaar monitors 450+ official gazettes and sends WhatsApp/SMS alerts when new schemes open in your bracket.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto shrink-0">
+<button class="w-full md:w-auto px-space-lg py-3 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container transition-all font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+          Save This Search Criteria
+        </button>
+</div>
+</div>
+<!-- PAGINATION BAR & ACCESSIBILITY CONTROLS -->
+<nav aria-label="Scheme Results Pagination" class="flex flex-col sm:flex-row items-center justify-between gap-space-md py-space-md border-t border-surface-container text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="">Showing schemes <strong>1–6</strong> of <strong>42</strong> verified programmes</span>
+</div>
+<!-- Page Controls -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded flex items-center justify-center bg-surface-container text-on-surface opacity-50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded flex items-center justify-center bg-primary text-on-primary font-bold" type="button">
+          1
+        </button>
+<button class="w-9 h-9 rounded flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface transition-colors" type="button">
+          2
+        </button>
+<button class="w-9 h-9 rounded flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface transition-colors" type="button">
+          3
+        </button>
+<span class="px-2">…</span>
+<button class="w-9 h-9 rounded flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface transition-colors" type="button">
+          7
+        </button>
+<button class="w-9 h-9 rounded flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Quick Jump Input -->
+<div class="flex items-center gap-2">
+<label class="font-body-sm text-body-sm" for="jump-page">Jump to page:</label>
+<input class="w-14 h-8 px-2 rounded bg-surface text-center text-on-surface shadow-sm font-label-sm text-label-sm focus:outline-none" id="jump-page" max="7" min="1" type="number" value="1">
+<button class="px-3 py-1 rounded bg-surface-container text-primary hover:bg-surface-container-high font-label-sm text-label-sm" type="button">Go</button>
+</div>
+</nav>
+</div>
+</div>
+<script>
+  // Simple, robust client-side filter button toggling
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.cat-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-primary', 'text-on-primary', 'active');
+          p.classList.add('bg-surface', 'text-on-surface');
+        });
+        pill.classList.remove('bg-surface', 'text-on-surface');
+        pill.classList.add('bg-primary', 'text-on-primary', 'active');
+      });
+    });
+
+    const searchInput = document.getElementById('scheme-search-input');
+    const clearBtn = document.getElementById('clear-search-btn');
+    if (clearBtn && searchInput) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+      });
+    }
+
+    const quickTags = document.querySelectorAll('.quick-tag');
+    quickTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = tag.textContent.trim();
+          searchInput.focus();
+        }
+      });
+    });
+  });
+</script></main><aside class="fixed bottom-6 right-6 z-40"><a class="flex items-center gap-space-sm px-space-lg py-space-md bg-surface-container-lowest text-primary rounded-full shadow-[0_8px_24px_-4px_rgba(16,42,67,0.15)] hover:shadow-[0_12px_28px_-4px_rgba(16,42,67,0.22)] transition-all hover:-translate-y-0.5 p-[2px] bg-gradient-to-r from-[#FF9933] via-surface-container-lowest to-[#138808]" data-path="legal-help" href="#"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full"><span class="text-tertiary-fixed-dim text-headline-sm">✦</span><span class="font-title-md text-title-md text-primary font-bold">Ask Adhikaar</span><span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span></div></a></aside><footer class="w-full bg-surface-container-low mt-space-2xl pt-space-2xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin flex flex-col gap-space-xl"><div class="flex flex-col md:flex-row items-start justify-between gap-space-xl"><div class="flex flex-col max-w-sm gap-space-sm"><div class="flex items-center gap-space-md"><img alt="Adhikaar Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XvhDEq2F-rTkRRA3uHFMhJnxOfWPntW4KpD7fKonP-NHu_Q_ReTKxGEjTZgkHXv7oNRUPrSyq_E1DdedbC7_AK5UEh-ul7zlPRNE7G6WviA7bqowAf1LKSLv291PC7cyxZkQESwkRU4PouLg5GF9M8QOOMkXIxPzs0Zn1SlXLYVQjXmH88E_br3pGhvuEdKTFyoDZzTTfU4GZ-Aw8OyyKrlI2_ZaQYn13P7UC93mHGvEptweM5C6sQZ1U"><span class="font-headline-sm text-headline-sm text-primary">अधिकार Adhikaar</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">An open-access constitutional empowerment initiative providing statutory knowledge, ministry-verified schemes, and civic aid across India.</p></div><div class="flex flex-wrap gap-space-2xl"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-primary font-bold">Civic Services</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">National Schemes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal-help" href="#">Legal Aid Directory</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="resources" href="#">Statutory Documents</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-primary font-bold">Platform</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About Initiative</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="accessibility" href="#">Accessibility</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-primary font-bold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms of Service</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="data-deletion" href="#">Data Deletion</a></div></div></div><div class="p-space-md rounded-xl bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-start gap-space-sm"><span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span><p class=""><strong>Verified Civic Notice:</strong> Adhikaar provides verified information and links to official resources. It does not replace professional legal advice.</p></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md border-t border-outline-variant/30 text-on-surface-variant"><span class="font-label-sm text-label-sm">© 2025 Adhikaar Civic Assistance Platform. Built for sovereign citizen access.</span><span class="font-label-sm text-label-sm text-secondary font-semibold">Proudly built for Indian Civic-Tech Inclusion</span></div></div></footer>
+
+</body></html>
