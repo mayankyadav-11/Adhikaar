@@ -1,0 +1,24 @@
+{
+  "common": {
+    "appName": "अधिकार Adhikaar",
+    "tagline": "Civic Assistance Platform",
+    "verifiedNotice": "Verified Civic Notice",
+    "status": {
+      "connected": "API Connected",
+      "offline": "API Offline",
+      "checking": "Checking API..."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "schemes": "Schemes",
+    "legalHelp": "Legal Help",
+    "resources": "Resources",
+    "about": "About",
+    "askAi": "Ask Adhikaar AI"
+  },
+  "footer": {
+    "tagline": "Built for sovereign citizen access.",
+    "attribution": "Proudly built for Indian Civic-Tech Inclusion"
+  }
+}
