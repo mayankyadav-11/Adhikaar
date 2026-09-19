@@ -41,12 +41,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-outline-variant/20 transition-colors">
-      <div className="max-w-7xl mx-auto px-margin flex items-center justify-between h-20">
+      <div className="page-container flex items-center justify-between h-20">
         {/* Logo */}
         <Logo />
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-space-lg">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`py-space-xs transition-colors ${
+                className={`py-2 px-1 transition-colors ${
                   isActive
                     ? "text-primary font-bold border-b-2 border-primary"
                     : "font-title-md text-title-md text-on-surface-variant hover:text-on-surface"
@@ -69,16 +69,16 @@ export default function Navbar() {
         </nav>
 
         {/* Right Action Icons: Language, Theme Toggle, Profile */}
-        <div className="flex items-center gap-space-sm md:gap-space-md">
+        <div className="flex items-center gap-3 sm:gap-4">
           {/* Language Selector */}
           <div className="relative" ref={langRef}>
             <button
               type="button"
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-[0_1px_3px_rgba(16,42,67,0.05)] cursor-pointer group hover:bg-surface-container transition-all"
+              className="flex items-center bg-surface-container-low px-3.5 py-1.5 rounded-xl shadow-[0_1px_3px_rgba(16,42,67,0.05)] cursor-pointer group hover:bg-surface-container transition-all"
             >
               <div className="flex flex-col text-left">
-                <div className="flex items-center gap-space-xs">
+                <div className="flex items-center gap-1.5">
                   <span className="font-label-md text-label-md text-on-surface">
                     {selectedLang}
                   </span>
@@ -120,7 +120,7 @@ export default function Navbar() {
           <button
             aria-label="Toggle Theme"
             onClick={toggleTheme}
-            className="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+            className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
             type="button"
           >
             <span className="material-symbols-outlined text-[20px]">
@@ -134,7 +134,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setProfileOpen(!profileOpen)}
-                className="flex items-center gap-space-xs pl-space-xs pr-space-sm py-space-xs rounded-full bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer select-none"
+                className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer select-none"
               >
                 <div className="relative">
                   <div className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-title-md font-bold shadow-sm">
@@ -156,23 +156,23 @@ export default function Navbar() {
               </button>
 
               {profileOpen && (
-                <div className="absolute right-0 top-12 mt-2 w-64 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 py-space-sm z-50">
-                  <div className="px-space-md py-space-xs border-b border-outline-variant/30">
+                <div className="absolute right-0 top-12 mt-2 w-64 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 p-2 z-50">
+                  <div className="px-3 py-2 border-b border-outline-variant/30">
                     <p className="font-label-md text-label-md text-on-surface font-bold">
                       Rajesh Kumar
                     </p>
                     <p className="font-body-sm text-body-sm text-on-surface-variant truncate">
                       rajesh.k@citizens.gov.in
                     </p>
-                    <div className="inline-flex items-center gap-1 mt-1 px-space-xs py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-container font-label-sm text-[10px] font-bold">
+                    <div className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-container font-label-sm text-[10px] font-bold">
                       <span className="material-symbols-outlined text-[12px]">verified</span>
                       Aadhaar-Seeded eKYC
                     </div>
                   </div>
-                  <div className="py-1">
+                  <div className="py-1.5">
                     <Link
                       href="#"
-                      className="flex items-center gap-space-sm px-space-md py-space-xs text-body-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-body-sm text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"
                     >
                       <span className="material-symbols-outlined text-[18px] text-primary">
                         account_circle
@@ -181,7 +181,7 @@ export default function Navbar() {
                     </Link>
                     <Link
                       href="/schemes"
-                      className="flex items-center gap-space-sm px-space-md py-space-xs text-body-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-body-sm text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"
                     >
                       <span className="material-symbols-outlined text-[18px] text-secondary">
                         folder_shared
@@ -190,7 +190,7 @@ export default function Navbar() {
                     </Link>
                     <Link
                       href="/legal-help"
-                      className="flex items-center gap-space-sm px-space-md py-space-xs text-body-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-2 text-body-sm text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"
                     >
                       <span className="material-symbols-outlined text-[18px] text-primary">
                         draft
@@ -205,7 +205,7 @@ export default function Navbar() {
                         setIsSignedIn(false);
                         setProfileOpen(false);
                       }}
-                      className="w-full flex items-center gap-space-sm px-space-md py-space-xs text-body-sm text-error hover:bg-error-container transition-colors text-left font-semibold cursor-pointer"
+                      className="w-full flex items-center gap-2.5 px-3 py-2 text-body-sm text-error hover:bg-error-container rounded-lg transition-colors text-left font-semibold cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-[18px]">logout</span>
                       Sign Out
@@ -215,18 +215,18 @@ export default function Navbar() {
               )}
             </div>
           ) : (
-            <div className="flex items-center gap-space-xs">
+            <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setIsSignedIn(true)}
-                className="font-label-md text-label-md text-on-surface px-space-md py-space-sm rounded-xl hover:bg-surface-container-low transition-colors"
+                className="font-label-md text-label-md text-on-surface px-4 py-2 rounded-xl hover:bg-surface-container-low transition-colors"
               >
                 Sign In
               </button>
               <button
                 type="button"
                 onClick={() => setIsSignedIn(true)}
-                className="font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary px-space-md py-space-sm rounded-full transition-all shadow-sm"
+                className="font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary px-4 py-2 rounded-full transition-all shadow-sm"
               >
                 Sign Up
               </button>
@@ -237,7 +237,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface"
+            className="md:hidden w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface"
             aria-label="Open menu"
           >
             <span className="material-symbols-outlined text-[24px]">

@@ -4,11 +4,11 @@ import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-surface-container-low mt-space-2xl pt-space-2xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)] border-t border-outline-variant/20 transition-colors">
-      <div className="max-w-7xl mx-auto px-margin flex flex-col gap-space-xl">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-space-xl">
+    <footer className="w-full bg-surface-container-low mt-16 sm:mt-24 pt-16 sm:pt-20 pb-12 shadow-[0_-1px_8px_rgba(0,0,0,0.02)] border-t border-outline-variant/20 transition-colors">
+      <div className="page-container flex flex-col gap-10 sm:gap-14">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10 lg:gap-16">
           {/* Brand Mission */}
-          <div className="flex flex-col max-w-sm gap-space-sm">
+          <div className="flex flex-col max-w-sm gap-3">
             <Logo showSubtitle={false} />
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               An open-access constitutional empowerment initiative providing statutory knowledge, ministry-verified schemes, and civic aid across India.
@@ -16,8 +16,8 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links Columns */}
-          <div className="flex flex-wrap gap-space-2xl">
-            <div className="flex flex-col gap-space-sm">
+          <div className="flex flex-wrap gap-10 sm:gap-16 lg:gap-24">
+            <div className="flex flex-col gap-3">
               <span className="font-label-md text-label-md text-primary font-bold">
                 Civic Services
               </span>
@@ -41,7 +41,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="flex flex-col gap-space-sm">
+            <div className="flex flex-col gap-3">
               <span className="font-label-md text-label-md text-primary font-bold">
                 Platform
               </span>
@@ -65,7 +65,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="flex flex-col gap-space-sm">
+            <div className="flex flex-col gap-3">
               <span className="font-label-md text-label-md text-primary font-bold">
                 Governance
               </span>
@@ -92,17 +92,17 @@ export default function Footer() {
         </div>
 
         {/* Verified Notice Box */}
-        <div className="p-space-md rounded-xl bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-start gap-space-sm">
-          <span className="material-symbols-outlined text-[20px] text-secondary shrink-0">
+        <div className="p-5 sm:p-6 rounded-2xl bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-start gap-3.5 border border-outline-variant/15">
+          <span className="material-symbols-outlined text-[20px] text-secondary shrink-0 mt-0.5">
             verified_user
           </span>
-          <p>
-            <strong>Verified Civic Notice:</strong> Adhikaar provides verified information and links to official resources. It does not replace professional legal advice.
+          <p className="leading-relaxed">
+            <strong className="text-on-surface font-semibold">Verified Civic Notice:</strong> Adhikaar provides verified information and links to official resources. It does not replace professional legal advice.
           </p>
         </div>
 
         {/* Bottom copyright & attribution */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md border-t border-outline-variant/30 text-on-surface-variant">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-outline-variant/20 text-on-surface-variant">
           <span className="font-label-sm text-label-sm">
             © 2025 Adhikaar Civic Assistance Platform. Built for sovereign citizen access.
           </span>

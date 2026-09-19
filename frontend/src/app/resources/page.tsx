@@ -47,44 +47,44 @@ export default function ResourcesPage() {
   const { openChat } = useChat();
 
   return (
-    <div className="w-full bg-surface min-h-[calc(100vh-80px)] py-space-xl">
-      <div className="max-w-7xl mx-auto px-margin">
-        <header className="max-w-3xl mb-space-xl">
+    <div className="w-full bg-surface min-h-[calc(100vh-80px)] py-10 sm:py-14 lg:py-16">
+      <div className="page-container">
+        <header className="max-w-3xl mb-10 sm:mb-12">
           <span className="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">
             Public Civic Repository
           </span>
-          <h1 className="font-display text-display text-primary font-bold mt-1">
+          <h1 className="font-display text-display text-primary font-bold mt-1.5 tracking-tight">
             Documents, Forms &amp; Statutory Templates
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mt-2 leading-relaxed">
+          <p className="font-body-lg text-body-lg text-on-surface-variant mt-3 leading-relaxed">
             Download standardized, verified dispute notices, RTI applications, and compliance checklists in 14 Indian languages.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {resources.map((res, i) => (
             <div
               key={i}
-              className="p-space-lg rounded-xl bg-surface-container-lowest shadow-md hover:shadow-xl transition-all border border-outline-variant/20 flex flex-col justify-between"
+              className="p-6 sm:p-7 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all border border-outline-variant/20 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-space-md">
-                  <span className="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-semibold">
+                <div className="flex items-center justify-between mb-5">
+                  <span className="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-surface-container text-secondary font-semibold">
                     {res.category}
                   </span>
                   <span className="material-symbols-outlined text-primary text-[24px]">
                     {res.icon}
                   </span>
                 </div>
-                <h3 className="font-title-lg text-title-lg text-primary font-bold">
+                <h3 className="font-title-lg text-title-lg text-primary font-bold leading-snug">
                   {res.title}
                 </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
                   {res.desc}
                 </p>
               </div>
 
-              <div className="mt-space-lg pt-space-md border-t border-outline-variant/15 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => alert(`Downloading template for ${res.title}`)}

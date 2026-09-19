@@ -46,9 +46,9 @@ export default function AIChatPanel() {
   return (
     <div className="fixed inset-y-0 right-0 z-50 w-full md:w-[620px] lg:w-[680px] bg-surface-container-lowest shadow-2xl border-l border-outline-variant/30 flex flex-col transition-transform duration-300 animate-in slide-in-from-right">
       {/* Assistant Header */}
-      <div className="bg-primary px-5 py-4 text-on-primary flex flex-col gap-3">
+      <div className="bg-primary px-5 sm:px-6 py-4 text-on-primary flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-tertiary-fixed">
               <span className="material-symbols-outlined text-[20px]">smart_toy</span>
             </div>
@@ -62,12 +62,12 @@ export default function AIChatPanel() {
                   Live
                 </span>
               </div>
-              <span className="font-label-sm text-label-sm text-on-primary-container mt-0.5">
+              <span className="font-label-sm text-label-sm text-on-primary-container mt-1">
                 Ready to guide you · Impartial &amp; Private
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-1 text-on-primary-container">
+          <div className="flex items-center gap-1.5 text-on-primary-container">
             <button
               onClick={() => {
                 setMessages([
@@ -79,7 +79,7 @@ export default function AIChatPanel() {
                   },
                 ]);
               }}
-              className="p-1.5 hover:bg-surface-container-lowest/10 rounded transition-colors text-on-primary cursor-pointer"
+              className="p-2 hover:bg-surface-container-lowest/10 rounded-lg transition-colors text-on-primary cursor-pointer"
               title="Reset session"
               type="button"
             >
@@ -87,7 +87,7 @@ export default function AIChatPanel() {
             </button>
             <button
               onClick={closeChat}
-              className="p-1.5 hover:bg-surface-container-lowest/10 rounded transition-colors text-on-primary cursor-pointer"
+              className="p-2 hover:bg-surface-container-lowest/10 rounded-lg transition-colors text-on-primary cursor-pointer"
               title="Close assistant"
               type="button"
             >
@@ -95,7 +95,7 @@ export default function AIChatPanel() {
             </button>
           </div>
         </div>
-        <div className="flex items-center justify-between pt-1 border-t border-surface-container-lowest/10">
+        <div className="flex items-center justify-between pt-2 border-t border-surface-container-lowest/10">
           <span className="inline-flex items-center gap-1.5 font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-lowest/10 text-on-primary">
             <span className="material-symbols-outlined text-[14px]">folder</span>
             Labour &amp; Wages Case #AD-8492
@@ -107,11 +107,11 @@ export default function AIChatPanel() {
       </div>
 
       {/* Chat Messages Scroll Area */}
-      <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-4 bg-surface-container-low/40">
+      <div className="flex-1 p-5 sm:p-6 overflow-y-auto flex flex-col gap-4 sm:gap-5 bg-surface-container-low/40">
         {messages.map((m) =>
           m.sender === "user" ? (
-            <div key={m.id} className="flex justify-end items-start gap-2 max-w-[88%] self-end">
-              <div className="bg-primary text-on-primary p-3.5 rounded-xl rounded-tr-none shadow-sm flex flex-col gap-1.5">
+            <div key={m.id} className="flex justify-end items-start gap-2.5 max-w-[88%] self-end">
+              <div className="bg-primary text-on-primary p-3.5 sm:p-4 rounded-2xl rounded-tr-none shadow-sm flex flex-col gap-1.5">
                 <span className="font-label-sm text-label-sm text-primary-fixed-dim font-semibold">
                   You
                 </span>
@@ -120,16 +120,16 @@ export default function AIChatPanel() {
                   {m.time}
                 </span>
               </div>
-              <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary text-xs shrink-0">
-                <span className="material-symbols-outlined text-[15px]">person</span>
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary text-xs shrink-0 mt-0.5">
+                <span className="material-symbols-outlined text-[16px]">person</span>
               </div>
             </div>
           ) : (
-            <div key={m.id} className="flex items-start gap-2.5 max-w-[96%] self-start">
+            <div key={m.id} className="flex items-start gap-3 max-w-[96%] self-start">
               <div className="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-sm shrink-0 shadow-sm mt-1">
                 <span className="material-symbols-outlined text-[18px]">verified</span>
               </div>
-              <div className="bg-surface-container-lowest p-4 rounded-xl rounded-tl-none shadow-sm flex flex-col gap-2">
+              <div className="bg-surface-container-lowest p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-sm flex flex-col gap-2 border border-outline-variant/15">
                 <p className="font-body-sm text-body-sm text-on-surface leading-relaxed">{m.text}</p>
               </div>
             </div>
@@ -137,17 +137,17 @@ export default function AIChatPanel() {
         )}
 
         {/* Default Assistant Comprehensive Advice Box (from Stitch) */}
-        <div className="flex items-start gap-2.5 max-w-[98%] self-start mt-2">
+        <div className="flex items-start gap-3 max-w-[98%] self-start mt-2">
           <div className="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-sm shrink-0 shadow-sm mt-1">
             <span className="material-symbols-outlined text-[18px]">verified</span>
           </div>
-          <div className="flex flex-col gap-3 w-full">
-            <div className="bg-surface-container-lowest p-4 rounded-xl rounded-tl-none shadow-sm flex flex-col gap-3">
+          <div className="flex flex-col gap-3.5 w-full">
+            <div className="bg-surface-container-lowest p-5 rounded-2xl rounded-tl-none shadow-sm flex flex-col gap-4 border border-outline-variant/15">
               <div className="flex items-center justify-between">
                 <span className="font-title-md text-title-md text-primary font-bold">
                   Statutory Wage Protection Advisory
                 </span>
-                <span className="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">
+                <span className="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-semibold">
                   Verified Counsel
                 </span>
               </div>
@@ -156,15 +156,15 @@ export default function AIChatPanel() {
               </p>
 
               {/* Questionnaire card */}
-              <div className="bg-surface-container-low p-3.5 rounded-lg flex flex-col gap-2.5">
-                <span className="font-label-md text-label-md text-primary font-semibold">
+              <div className="bg-surface-container-low p-4 sm:p-5 rounded-xl flex flex-col gap-3 border border-outline-variant/15">
+                <span className="font-label-md text-label-md text-primary font-bold">
                   To generate your customized legal demand letter, please confirm:
                 </span>
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-sm text-label-sm text-on-surface-variant">
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
                     1. Employment Status &amp; Contract Type
                   </label>
-                  <select className="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm px-3 py-2 rounded shadow-sm focus:outline-none border border-outline-variant/30">
+                  <select className="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm px-3.5 py-2.5 rounded-lg shadow-sm focus:outline-none border border-outline-variant/30">
                     <option>Full-time Contract (Technician)</option>
                     <option>Permanent Direct Roll</option>
                     <option>Daily Wage / Informal Worker</option>
@@ -172,15 +172,15 @@ export default function AIChatPanel() {
                   </select>
                 </div>
 
-                <div className="flex flex-col gap-1 mt-1">
-                  <label className="font-label-sm text-label-sm text-on-surface-variant">
+                <div className="flex flex-col gap-1.5 mt-1">
+                  <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
                     2. Verified Proof Available
                   </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {["Bank Records", "Appointment Letter", "WhatsApp / Logs"].map((proof, i) => (
                       <label
                         key={proof}
-                        className="flex items-center gap-2 bg-surface-container-lowest p-2 rounded cursor-pointer shadow-sm border border-outline-variant/20"
+                        className="flex items-center gap-2 bg-surface-container-lowest p-2.5 rounded-lg cursor-pointer shadow-sm border border-outline-variant/20"
                       >
                         <input
                           defaultChecked={i !== 2}
@@ -193,8 +193,8 @@ export default function AIChatPanel() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1 mt-1">
-                  <label className="font-label-sm text-label-sm text-on-surface-variant">
+                <div className="flex flex-col gap-1.5 mt-1">
+                  <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
                     3. Desired Resolution Outcome
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -206,10 +206,10 @@ export default function AIChatPanel() {
                         key={outcome}
                         type="button"
                         onClick={() => setSelectedOutcome(idx)}
-                        className={`font-label-sm text-label-sm px-3 py-1.5 rounded font-semibold transition-all ${
+                        className={`font-label-sm text-label-sm px-3.5 py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
                           selectedOutcome === idx
                             ? "bg-primary text-on-primary shadow-sm"
-                            : "bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface"
+                            : "bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface border border-outline-variant/20"
                         }`}
                       >
                         {outcome}
@@ -220,32 +220,32 @@ export default function AIChatPanel() {
               </div>
 
               {/* Recommended Action Sequence */}
-              <div className="bg-surface-container-lowest rounded-lg flex flex-col gap-2.5">
+              <div className="bg-surface-container-lowest rounded-xl flex flex-col gap-3">
                 <span className="font-title-md text-title-md text-primary font-bold">
                   Recommended Action Sequence
                 </span>
 
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
-                  <span className="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shrink-0">
+                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl bg-surface-container-low border border-outline-variant/15">
+                  <span className="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shrink-0 mt-0.5 font-bold">
                     1
                   </span>
                   <div className="flex flex-col flex-1">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-2">
                       <span className="font-title-md text-title-md text-on-surface font-semibold">
                         Issue Formal Demand Notice
                       </span>
-                      <span className="font-label-sm text-label-sm text-secondary font-bold">
+                      <span className="font-label-sm text-label-sm text-secondary font-bold shrink-0">
                         7-Day Cure Period
                       </span>
                     </div>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
                       Generated statutory notice citing Section 15 of Payment of Wages Act.
                     </p>
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <div className="mt-2.5 flex flex-wrap gap-2">
                       <button
                         type="button"
                         onClick={() => alert("Downloading customized statutory notice draft (PDF)...")}
-                        className="font-label-sm text-label-sm bg-primary text-on-primary px-3 py-1.5 rounded hover:bg-opacity-90 transition-colors inline-flex items-center gap-1 cursor-pointer"
+                        className="font-label-sm text-label-sm bg-primary text-on-primary px-3.5 py-2 rounded-lg hover:bg-opacity-90 transition-colors inline-flex items-center gap-1.5 cursor-pointer shadow-sm"
                       >
                         <span className="material-symbols-outlined text-[14px]">download</span>
                         Download Notice Draft (PDF)
@@ -254,29 +254,29 @@ export default function AIChatPanel() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
-                  <span className="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm shrink-0">
+                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl bg-surface-container-low border border-outline-variant/15">
+                  <span className="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm shrink-0 mt-0.5 font-bold">
                     2
                   </span>
                   <div className="flex flex-col flex-1">
                     <span className="font-title-md text-title-md text-on-surface font-semibold">
                       E-File at Samadhan Labour Portal
                     </span>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
                       Conciliation petition automatically addressed to Assistant Labour Commissioner, Gurugram Circle-II.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
-                  <span className="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-container flex items-center justify-center font-label-sm text-label-sm shrink-0 font-bold">
+                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl bg-surface-container-low border border-outline-variant/15">
+                  <span className="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-container flex items-center justify-center font-label-sm text-label-sm shrink-0 mt-0.5 font-bold">
                     3
                   </span>
                   <div className="flex flex-col flex-1">
                     <span className="font-title-md text-title-md text-on-surface font-semibold">
                       Connect with Pro-Bono DLSA Advocate
                     </span>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
                       District Courts Complex, Gurugram (Free legal aid under Section 12).
                     </p>
                   </div>
@@ -288,20 +288,20 @@ export default function AIChatPanel() {
       </div>
 
       {/* Input area */}
-      <div className="p-4 bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col gap-2">
-        <div className="flex items-center gap-2">
+      <div className="p-4 sm:p-5 bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col gap-2.5">
+        <div className="flex items-center gap-2.5">
           <input
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Type your follow-up query or statutory question..."
-            className="flex-1 bg-surface-container-low text-on-surface px-4 py-2.5 rounded-lg text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/20"
+            className="flex-1 bg-surface-container-low text-on-surface px-4 py-3 rounded-xl text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/20 placeholder:text-outline"
           />
           <button
             type="button"
             onClick={handleSend}
-            className="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center hover:bg-opacity-90 transition-all cursor-pointer shrink-0"
+            className="w-11 h-11 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:bg-opacity-90 transition-all cursor-pointer shrink-0 shadow-sm"
           >
             <span className="material-symbols-outlined text-[20px]">send</span>
           </button>

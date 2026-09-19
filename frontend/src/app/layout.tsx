@@ -7,8 +7,10 @@ import Footer from "@/components/layout/Footer";
 import AskAdhikaarFAB from "@/components/ai/AskAdhikaarFAB";
 import AIChatPanel from "@/components/ai/AIChatPanel";
 
+import AppShell from "@/components/layout/AppShell";
+
 export const metadata: Metadata = {
-  title: "अधिकार Adhikaar — Civic Assistance Platform",
+  title: "अधिकार Adhikaar - Civic Assistance Platform",
   description:
     "Know your rights. Discover your benefits. Democratizing statutory awareness and welfare access for every Indian citizen.",
 };
@@ -39,9 +41,11 @@ export default function RootLayout({
       <body className="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
         <ThemeProvider>
           <ChatProvider>
-            <Navbar />
-            <main className="flex-1 w-full">{children}</main>
-            <Footer />
+            <AppShell>
+              <Navbar />
+              <main className="flex-1 w-full">{children}</main>
+              <Footer />
+            </AppShell>
             <AskAdhikaarFAB />
             <AIChatPanel />
           </ChatProvider>
