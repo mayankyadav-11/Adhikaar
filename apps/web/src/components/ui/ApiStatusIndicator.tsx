@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { apiClient } from "@/services/apiClient";
 import { HealthResponse } from "@adhikaar/shared";
+import { Loader } from "./Loader";
 
 interface ApiStatusIndicatorProps {
   variant?: "pill" | "compact";
@@ -80,20 +81,20 @@ export default function ApiStatusIndicator({
             : "Attempting connection to backend API"
         }
       >
-        <span className="relative flex h-2 w-2">
-          {status === "connected" && (
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          )}
-          <span
-            className={`relative inline-flex rounded-full h-2 w-2 ${
-              status === "connected"
-                ? "bg-emerald-500"
-                : status === "disconnected"
-                  ? "bg-amber-500"
-                  : "bg-outline-variant animate-pulse"
-            }`}
-          />
-        </span>
+        {status === "checking" ? (
+          <Loader size="xs" className="mr-0.5" label="Checking backend API..." />
+        ) : (
+          <span className="relative flex h-2 w-2">
+            {status === "connected" && (
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            )}
+            <span
+              className={`relative inline-flex rounded-full h-2 w-2 ${
+                status === "connected" ? "bg-emerald-500" : "bg-amber-500"
+              }`}
+            />
+          </span>
+        )}
         <span>
           {status === "connected"
             ? "API Connected"
@@ -126,20 +127,20 @@ export default function ApiStatusIndicator({
             : "Checking API health..."
       }
     >
-      <span className="relative flex h-2 w-2">
-        {status === "connected" && (
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        )}
-        <span
-          className={`relative inline-flex rounded-full h-2 w-2 ${
-            status === "connected"
-              ? "bg-emerald-500"
-              : status === "disconnected"
-                ? "bg-amber-500"
-                : "bg-outline-variant animate-pulse"
-          }`}
-        />
-      </span>
+      {status === "checking" ? (
+        <Loader size="xs" label="Checking backend API..." />
+      ) : (
+        <span className="relative flex h-2 w-2">
+          {status === "connected" && (
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          )}
+          <span
+            className={`relative inline-flex rounded-full h-2 w-2 ${
+              status === "connected" ? "bg-emerald-500" : "bg-amber-500"
+            }`}
+          />
+        </span>
+      )}
       <span
         className={
           status === "connected"

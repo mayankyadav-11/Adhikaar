@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ChatProvider } from "@/contexts/ChatContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { I18nProvider } from "@/i18n/I18nContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AskAdhikaarFAB from "@/components/ai/AskAdhikaarFAB";
 import AIChatPanel from "@/components/ai/AIChatPanel";
+import AuthModal from "@/components/auth/AuthModal";
 
 import AppShell from "@/components/layout/AppShell";
 
@@ -38,15 +40,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
         <I18nProvider>
           <ThemeProvider>
-            <ChatProvider>
-              <AppShell>
-                <Navbar />
-                <main className="flex-1 w-full">{children}</main>
-                <Footer />
-              </AppShell>
-              <AskAdhikaarFAB />
-              <AIChatPanel />
-            </ChatProvider>
+            <AuthProvider>
+              <ChatProvider>
+                <AppShell>
+                  <Navbar />
+                  <main className="flex-1 w-full">{children}</main>
+                  <Footer />
+                </AppShell>
+                <AskAdhikaarFAB />
+                <AIChatPanel />
+                <AuthModal />
+              </ChatProvider>
+            </AuthProvider>
           </ThemeProvider>
         </I18nProvider>
       </body>

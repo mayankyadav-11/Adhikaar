@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/ui/Logo";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -17,7 +18,7 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const { user, signOut, openAuthModal } = useAuth();
   const [profileOpen, setProfileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState("English");
@@ -126,7 +127,7 @@ export default function Navbar() {
           </button>
 
           {/* Auth State: Signed In or Signed Out */}
-          {isSignedIn ? (
+          {user ? (
             <div className="relative" ref={profileRef}>
               <button
                 type="button"
@@ -134,17 +135,25 @@ export default function Navbar() {
                 className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer select-none"
               >
                 <div className="relative">
-                  <div className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-title-md font-bold shadow-sm">
-                    <span>RK</span>
+                  <div className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-title-md font-bold shadow-sm uppercase">
+                    <span>
+                      {user.user_metadata?.full_name
+                        ? user.user_metadata.full_name
+                            .split(" ")
+                            .map((n: string) => n[0])
+                            .slice(0, 2)
+                            .join("")
+                        : user.email?.slice(0, 2) || "AD"}
+                    </span>
                   </div>
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary border-2 border-surface-container-lowest" />
                 </div>
                 <div className="hidden lg:flex flex-col text-left ml-1">
-                  <span className="font-label-md text-label-md text-on-surface font-semibold leading-tight">
-                    Rajesh Kumar
+                  <span className="font-label-md text-label-md text-on-surface font-semibold leading-tight max-w-[120px] truncate">
+                    {user.user_metadata?.full_name || user.email?.split("@")[0] || "Citizen"}
                   </span>
                   <span className="font-label-sm text-[10px] text-on-surface-variant leading-none">
-                    Dossier #4829
+                    Dossier #{user.id.slice(0, 6)}
                   </span>
                 </div>
                 <span className="material-symbols-outlined text-[18px] text-on-surface-variant ml-0.5">
@@ -155,15 +164,15 @@ export default function Navbar() {
               {profileOpen && (
                 <div className="absolute right-0 top-12 mt-2 w-64 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 p-2 z-50">
                   <div className="px-3 py-2 border-b border-outline-variant/30">
-                    <p className="font-label-md text-label-md text-on-surface font-bold">
-                      Rajesh Kumar
+                    <p className="font-label-md text-label-md text-on-surface font-bold truncate">
+                      {user.user_metadata?.full_name || "Verified Citizen"}
                     </p>
                     <p className="font-body-sm text-body-sm text-on-surface-variant truncate">
-                      rajesh.k@citizens.gov.in
+                      {user.email}
                     </p>
                     <div className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-container font-label-sm text-[10px] font-bold">
                       <span className="material-symbols-outlined text-[12px]">verified</span>
-                      Aadhaar-Seeded eKYC
+                      Supabase Authenticated
                     </div>
                   </div>
                   <div className="py-1.5">
@@ -198,9 +207,9 @@ export default function Navbar() {
                   <div className="border-t border-outline-variant/30 pt-1 mt-1">
                     <button
                       type="button"
-                      onClick={() => {
-                        setIsSignedIn(false);
+                      onClick={async () => {
                         setProfileOpen(false);
+                        await signOut();
                       }}
                       className="w-full flex items-center gap-2.5 px-3 py-2 text-body-sm text-error hover:bg-error-container rounded-lg transition-colors text-left font-semibold cursor-pointer"
                     >
@@ -215,15 +224,15 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => setIsSignedIn(true)}
-                className="font-label-md text-label-md text-on-surface px-4 py-2 rounded-xl hover:bg-surface-container-low transition-colors"
+                onClick={() => openAuthModal("signin")}
+                className="font-label-md text-label-md text-on-surface px-4 py-2 rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer"
               >
                 Sign In
               </button>
               <button
                 type="button"
-                onClick={() => setIsSignedIn(true)}
-                className="font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary px-4 py-2 rounded-full transition-all shadow-sm"
+                onClick={() => openAuthModal("signup")}
+                className="font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary px-4 py-2 rounded-full transition-all shadow-sm cursor-pointer"
               >
                 Sign Up
               </button>

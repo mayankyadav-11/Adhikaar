@@ -9,6 +9,8 @@ export const env = {
   PORT: parseInt(process.env.PORT || "5000", 10),
   CLIENT_URL: process.env.CLIENT_URL || "http://localhost:3000",
   MONGODB_URI: process.env.MONGODB_URI || "",
+  SUPABASE_URL: process.env.SUPABASE_URL || "",
+  SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY || "",
   SERVICE_NAME: "adhikaar-api",
   VERSION: "0.1.0",
 } as const;

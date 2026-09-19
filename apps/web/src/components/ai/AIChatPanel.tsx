@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useChat } from "@/contexts/ChatContext";
+import { Loader } from "@/components/ui/Loader";
 
 export default function AIChatPanel() {
   const { isChatOpen, closeChat, activeQuery } = useChat();
@@ -17,32 +18,36 @@ export default function AIChatPanel() {
   ]);
   const [inputText, setInputText] = useState("");
   const [selectedOutcome, setSelectedOutcome] = useState(0);
+  const [isThinking, setIsThinking] = useState(false);
 
   if (!isChatOpen) return null;
 
   const handleSend = () => {
-    if (!inputText.trim()) return;
+    if (!inputText.trim() || isThinking) return;
+    const sentText = inputText;
     const newMsg = {
       id: String(Date.now()),
       sender: "user",
-      text: inputText,
+      text: sentText,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
     setMessages((prev) => [...prev, newMsg]);
     setInputText("");
+    setIsThinking(true);
 
-    // Simulate AI response
+    // Simulate AI response with standard Loader feedback
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
         {
           id: String(Date.now() + 1),
           sender: "assistant",
-          text: `Analyzing your query against official statutes and welfare directories. We have noted: "${inputText}". Under relevant Indian Code regulations, you are entitled to statutory relief and legal aid.`,
+          text: `Analyzing your query against official statutes and welfare directories. We have noted: "${sentText}". Under relevant Indian Code regulations, you are entitled to statutory relief and legal aid.`,
           time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         },
       ]);
-    }, 900);
+      setIsThinking(false);
+    }, 1200);
   };
 
   return (
@@ -295,6 +300,22 @@ export default function AIChatPanel() {
             </div>
           </div>
         </div>
+
+        {isThinking && (
+          <div className="flex justify-start items-start gap-3 max-w-[88%] self-start animate-in fade-in duration-200">
+            <div className="p-3.5 sm:p-4 rounded-2xl rounded-tl-none bg-surface-container border border-outline-variant/30 shadow-sm flex items-center gap-3">
+              <Loader size="sm" label="Adhikaar AI is analyzing statutes..." />
+              <div className="flex flex-col">
+                <span className="font-label-sm text-label-sm text-primary font-bold">
+                  Adhikaar Assistant
+                </span>
+                <span className="font-body-sm text-[12px] text-on-surface-variant">
+                  Analyzing statutes &amp; welfare frameworks...
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Input area */}
@@ -306,14 +327,21 @@ export default function AIChatPanel() {
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Type your follow-up query or statutory question..."
-            className="flex-1 bg-surface-container-low text-on-surface px-4 py-3 rounded-xl text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/20 placeholder:text-outline"
+            disabled={isThinking}
+            className="flex-1 bg-surface-container-low text-on-surface px-4 py-3 rounded-xl text-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant/20 placeholder:text-outline disabled:opacity-75"
           />
           <button
             type="button"
             onClick={handleSend}
-            className="w-11 h-11 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:bg-opacity-90 transition-all cursor-pointer shrink-0 shadow-sm"
+            disabled={isThinking || !inputText.trim()}
+            className="w-11 h-11 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:bg-opacity-90 transition-all cursor-pointer shrink-0 shadow-sm disabled:opacity-60"
+            title="Send query"
           >
-            <span className="material-symbols-outlined text-[20px]">send</span>
+            {isThinking ? (
+              <Loader size="xs" label="Thinking..." />
+            ) : (
+              <span className="material-symbols-outlined text-[20px]">send</span>
+            )}
           </button>
         </div>
         <p className="text-[11px] text-on-surface-variant text-center">
