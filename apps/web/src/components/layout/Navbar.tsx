@@ -177,7 +177,8 @@ export default function Navbar() {
                   </div>
                   <div className="py-1.5">
                     <Link
-                      href="#"
+                      href="/profile"
+                      onClick={() => setProfileOpen(false)}
                       className="flex items-center gap-2.5 px-3 py-2 text-body-sm text-on-surface hover:bg-surface-container-low rounded-lg transition-colors"
                     >
                       <span className="material-symbols-outlined text-[18px] text-primary">

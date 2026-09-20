@@ -1,5 +1,6 @@
 export const API_ROUTES = {
   HEALTH: "/health",
+  PROFILE: "/profile",
 } as const;
 
 export const DEFAULT_PORTS = {

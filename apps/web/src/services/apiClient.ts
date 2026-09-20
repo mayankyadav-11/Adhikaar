@@ -1,4 +1,11 @@
-import { HealthResponse, API_ROUTES } from "@adhikaar/shared";
+import {
+  HealthResponse,
+  CitizenProfile,
+  CreateProfileDto,
+  UpdateProfileDto,
+  ProfileResponse,
+  API_ROUTES,
+} from "@adhikaar/shared";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
@@ -32,6 +39,75 @@ export class ApiClient {
       throw error instanceof Error ? error : new Error("Failed to connect to Adhikaar API");
     }
   }
+
+  /**
+   * Fetches the authenticated citizen profile.
+   */
+  async getProfile(token: string): Promise<ProfileResponse> {
+    const url = `${this.baseUrl}${API_ROUTES.PROFILE}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message || `Failed to fetch profile (HTTP ${response.status})`);
+    }
+
+    return data as ProfileResponse;
+  }
+
+  /**
+   * Creates a new citizen profile.
+   */
+  async createProfile(token: string, dto: CreateProfileDto): Promise<CitizenProfile> {
+    const url = `${this.baseUrl}${API_ROUTES.PROFILE}`;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(dto),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message || `Failed to create profile (HTTP ${response.status})`);
+    }
+
+    return data.profile as CitizenProfile;
+  }
+
+  /**
+   * Updates an existing citizen profile.
+   */
+  async updateProfile(token: string, dto: UpdateProfileDto): Promise<CitizenProfile> {
+    const url = `${this.baseUrl}${API_ROUTES.PROFILE}`;
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(dto),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message || `Failed to update profile (HTTP ${response.status})`);
+    }
+
+    return data.profile as CitizenProfile;
+  }
 }
 
 export const apiClient = new ApiClient();
+
