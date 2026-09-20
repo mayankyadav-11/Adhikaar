@@ -42,9 +42,14 @@ next-env.d.ts
 Thumbs.db
 *.pem
 
-# IDEs
+# IDEs / AI Agents
 .idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+AGENTS.md
+CLAUDE.md
+
+# Design files
+tricolour_dawn/
