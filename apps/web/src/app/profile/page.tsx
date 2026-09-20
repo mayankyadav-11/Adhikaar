@@ -93,6 +93,8 @@ export default function ProfilePage() {
   const [isLoadingProfile, setIsLoadingProfile] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
+  const [showClearModal, setShowClearModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
@@ -145,6 +147,49 @@ export default function ProfilePage() {
       setIsLoadingProfile(false);
     }
   }, [session?.access_token, user?.user_metadata?.full_name, user?.email]);
+
+  const handleClearOptionalData = async () => {
+    if (!session?.access_token) return;
+    setIsClearing(true);
+    setErrorMessage(null);
+    setSuccessMessage(null);
+
+    const clearPayload: UpdateProfileDto = {
+      state: null,
+      district: null,
+      age: null,
+      gender: null,
+      occupation: null,
+      income_band: null,
+      category: null,
+      language: null,
+    };
+
+    try {
+      if (profile) {
+        const updated = await apiClient.updateProfile(session.access_token, clearPayload);
+        setProfile(updated);
+      }
+      setFormData((prev) => ({
+        ...prev,
+        state: "",
+        district: "",
+        age: "",
+        gender: "",
+        occupation: "",
+        income_band: "",
+        category: "",
+        language: "",
+      }));
+      setShowClearModal(false);
+      setIsEditing(false);
+      setSuccessMessage("Optional profile details cleared. Your demographic fields have been reset to 'Not added'.");
+    } catch (err: unknown) {
+      setErrorMessage(err instanceof Error ? err.message : "Failed to clear optional profile details.");
+    } finally {
+      setIsClearing(false);
+    }
+  };
 
   useEffect(() => {
     if (!isAuthLoading && session?.access_token) {
@@ -753,8 +798,84 @@ export default function ProfilePage() {
               </div>
             </form>
           )}
+
+          {/* Privacy & Profile Data Control Notice */}
+          <div className="mt-6 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-6 shadow-sm">
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-[22px]">privacy_tip</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-title-md text-title-md text-on-surface font-bold">
+                  Privacy Notice & Data Control
+                </h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Optional profile information is stored solely to provide more relevant scheme recommendations and legal aid guidance. You are never required to complete your profile, and you can edit or clear these details anytime without affecting your account.
+                </p>
+
+                <div className="mt-4 pt-4 border-t border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <span className="font-label-sm text-label-sm text-on-surface-variant">
+                    Reset your demographic details back to &ldquo;Not added&rdquo;?
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setShowClearModal(true)}
+                    className="self-start sm:self-auto font-label-sm text-error hover:text-error/80 font-semibold inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-error-container/30 transition-colors cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">delete_sweep</span>
+                    Clear Optional Information
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Confirmation Modal for Clearing Optional Profile Data */}
+      {showClearModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4">
+          <div className="bg-surface-container-lowest border border-outline-variant/40 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+            <div className="w-12 h-12 rounded-full bg-error-container/40 text-error flex items-center justify-center mb-4">
+              <span className="material-symbols-outlined text-[26px]">warning</span>
+            </div>
+            <h3 className="font-title-lg text-title-lg text-on-surface font-bold mb-2">
+              Clear Optional Profile Information?
+            </h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+              This will reset your optional demographic details (State, District, Age, Gender, Occupation, Income Range, Category, and Language) back to &ldquo;Not added&rdquo;. Your authenticated account, email, credentials, and full name will remain completely intact, and you will stay signed in.
+            </p>
+            <div className="flex items-center justify-end gap-3">
+              <button
+                type="button"
+                disabled={isClearing}
+                onClick={() => setShowClearModal(false)}
+                className="font-label-md px-4 py-2 rounded-xl border border-outline-variant/40 text-on-surface hover:bg-surface-container transition-all cursor-pointer disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                disabled={isClearing}
+                onClick={handleClearOptionalData}
+                className="inline-flex items-center gap-2 bg-error text-on-error font-label-md px-5 py-2 rounded-xl hover:bg-error/90 transition-all cursor-pointer shadow-sm disabled:opacity-50"
+              >
+                {isClearing ? (
+                  <>
+                    <Loader size="xs" label="Clearing..." />
+                    <span>Clearing...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="material-symbols-outlined text-[18px]">delete</span>
+                    <span>Confirm & Clear</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

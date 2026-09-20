@@ -351,5 +351,88 @@ describe("Profile API Endpoints", () => {
       expect(response.body.profile.name).toBe("Updated Name");
       expect(mockEq).toHaveBeenCalledWith("id", mockUser.id);
     });
+
+    it("should safely clear optional demographic fields to null while keeping name and id intact", async () => {
+      const clearedRow = {
+        id: mockUser.id,
+        name: "Aadhaar Citizen",
+        state: null,
+        district: null,
+        age: null,
+        gender: null,
+        occupation: null,
+        income_band: null,
+        category: null,
+        language: null,
+        created_at: "2026-01-01T00:00:00Z",
+        updated_at: "2026-09-20T00:00:00Z",
+      };
+
+      const mockUpdate = vi.fn().mockReturnThis();
+      const mockEq = vi.fn().mockReturnThis();
+      const mockSelect = vi.fn().mockReturnThis();
+      const mockSingle = vi.fn().mockResolvedValue({ data: clearedRow, error: null });
+
+      const mockSupabase = {
+        auth: {
+          getUser: vi.fn().mockResolvedValue({
+            data: { user: mockUser },
+            error: null,
+          }),
+        },
+        from: vi.fn().mockImplementation(() => ({
+          select: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              maybeSingle: vi.fn().mockResolvedValue({ data: { id: mockUser.id }, error: null }),
+            }),
+          }),
+          update: mockUpdate.mockReturnValue({
+            eq: mockEq.mockReturnValue({
+              select: mockSelect.mockReturnValue({
+                single: mockSingle,
+              }),
+            }),
+          }),
+        })),
+      };
+
+      vi.spyOn(supabaseConfig, "getSupabaseAdmin").mockReturnValue(
+        mockSupabase as unknown as ReturnType<typeof supabaseConfig.getSupabaseAdmin>
+      );
+
+      const response = await request(app)
+        .put("/profile")
+        .set("Authorization", "Bearer valid-token")
+        .send({
+          state: null,
+          district: null,
+          age: null,
+          gender: null,
+          occupation: null,
+          income_band: null,
+          category: null,
+          language: null,
+        });
+
+      expect(response.status).toBe(200);
+      expect(response.body.status).toBe("ok");
+      expect(response.body.profile.state).toBeNull();
+      expect(response.body.profile.district).toBeNull();
+      expect(response.body.profile.age).toBeNull();
+      expect(response.body.profile.name).toBe("Aadhaar Citizen");
+      expect(mockUpdate).toHaveBeenCalledWith(
+        expect.objectContaining({
+          state: null,
+          district: null,
+          age: null,
+          gender: null,
+          occupation: null,
+          income_band: null,
+          category: null,
+          language: null,
+        })
+      );
+    });
   });
 });
+
