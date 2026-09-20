@@ -23,7 +23,7 @@ describe("Auth Endpoints & Middleware", () => {
           error: { message: "Invalid JWT signature" },
         }),
       },
-    } as any);
+    } as unknown as ReturnType<typeof supabaseConfig.getSupabaseAdmin>);
 
     const response = await request(app)
       .get("/auth/me")
@@ -50,7 +50,7 @@ describe("Auth Endpoints & Middleware", () => {
           error: null,
         }),
       },
-    } as any);
+    } as unknown as ReturnType<typeof supabaseConfig.getSupabaseAdmin>);
 
     const response = await request(app)
       .get("/auth/me")
