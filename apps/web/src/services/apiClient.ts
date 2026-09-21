@@ -5,7 +5,11 @@ import {
   UpdateProfileDto,
   ProfileResponse,
   API_ROUTES,
+  SchemeSearchQuery,
+  SchemeSearchResponse,
+  SchemeResponse,
 } from "@adhikaar/shared";
+
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
@@ -106,6 +110,75 @@ export class ApiClient {
     }
 
     return data.profile as CitizenProfile;
+  }
+
+  /**
+   * Searches government schemes with optional keyword + filter criteria.
+   * No authentication required — public endpoint.
+   */
+  async searchSchemes(query: SchemeSearchQuery = {}): Promise<SchemeSearchResponse> {
+    const params = new URLSearchParams();
+    if (query.keyword) params.set("keyword", query.keyword);
+    if (query.state) params.set("state", query.state);
+    if (query.category) params.set("category", query.category);
+    if (query.gender) params.set("gender", query.gender);
+    if (query.age !== undefined) params.set("age", String(query.age));
+    if (query.income !== undefined) params.set("income", String(query.income));
+    if (query.disability !== undefined) params.set("disability", String(query.disability));
+    if (query.bpl !== undefined) params.set("bpl", String(query.bpl));
+    if (query.student !== undefined) params.set("student", String(query.student));
+    if (query.page) params.set("page", String(query.page));
+    if (query.limit) params.set("limit", String(query.limit));
+
+    const url = `${this.baseUrl}${API_ROUTES.SCHEMES_SEARCH}?${params.toString()}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message || `Failed to search schemes (HTTP ${response.status})`);
+    }
+
+    return data as SchemeSearchResponse;
+  }
+
+  /**
+   * Retrieves a single scheme by ID or slug.
+   * Optionally evaluates eligibility when citizen criteria are provided.
+   */
+  async getSchemeById(idOrSlug: string, citizen?: {
+    age?: number;
+    gender?: string;
+    income?: number;
+    state?: string;
+    disability?: boolean;
+    bpl?: boolean;
+  }): Promise<SchemeResponse> {
+    const params = new URLSearchParams();
+    if (citizen?.age !== undefined) params.set("age", String(citizen.age));
+    if (citizen?.gender) params.set("gender", citizen.gender);
+    if (citizen?.income !== undefined) params.set("income", String(citizen.income));
+    if (citizen?.state) params.set("state", citizen.state);
+    if (citizen?.disability !== undefined) params.set("disability", String(citizen.disability));
+    if (citizen?.bpl !== undefined) params.set("bpl", String(citizen.bpl));
+
+    const qs = params.toString();
+    const url = `${this.baseUrl}${API_ROUTES.SCHEMES}/${encodeURIComponent(idOrSlug)}${qs ? `?${qs}` : ""}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message || `Failed to fetch scheme (HTTP ${response.status})`);
+    }
+
+    return data as SchemeResponse;
   }
 }
 
