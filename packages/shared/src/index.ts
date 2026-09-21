@@ -3,4 +3,4 @@ export * from "./types/profile";
 export * from "./types/scheme";
 export * from "./constants/api-routes";
 export * from "./validation";
-
+export * from "./utils/eligibility";
