@@ -53,3 +53,9 @@ CLAUDE.md
 
 # Design files
 tricolour_dawn/
+
+# Local AI/development context
+PROJECT_CONTEXT.md
+
+# Local development dataset
+data/
